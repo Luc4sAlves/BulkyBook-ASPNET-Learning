@@ -1,4 +1,5 @@
 ﻿using BulkyBookWeb.Data;
+using BulkyBookWeb.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BulkyBookWeb.Controllers
@@ -14,8 +15,9 @@ namespace BulkyBookWeb.Controllers
         public IActionResult Index()
         {
             //Pegando os elementos do database, passando pra uma lista e alocando em uma variavel
-            var objCategoryList = _db.Categories.ToList(); 
-            return View();
+            //Podia retirar o .ToList quando mudei o var pra IEnumerable
+            IEnumerable<Category> objCategoryList = _db.Categories.ToList();
+            return View(objCategoryList);
         }
     }
 }
