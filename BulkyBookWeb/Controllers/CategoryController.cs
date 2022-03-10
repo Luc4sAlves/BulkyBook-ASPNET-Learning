@@ -17,7 +17,16 @@ namespace BulkyBookWeb.Controllers
             //Pegando os elementos do database, passando pra uma lista e alocando em uma variavel
             //Podia retirar o .ToList quando mudei o var pra IEnumerable
             IEnumerable<Category> objCategoryList = _db.Categories.ToList();
+
+            //Passando essa var pra View, vamos recebê-la no index.cshtml como um @model
             return View(objCategoryList);
+        }
+
+        //GET
+        public IActionResult Create()
+        {
+
+            return View();
         }
     }
 }

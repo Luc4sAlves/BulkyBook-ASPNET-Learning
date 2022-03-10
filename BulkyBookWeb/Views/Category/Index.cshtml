@@ -25,9 +25,9 @@
             <th>
                 Display Order
             </th>
-            <th>
+@*            <th>
                 Date
-            </th>
+            </th>*@
             <!-- Pode adicionar outras tags como data -->
         </tr>
     </thead>
@@ -35,15 +35,15 @@
         @foreach(var  obj in Model)
         {
             <tr>
-                <td width = "40%">
+                <td width = "50%">
                     @obj.Name
                 </td>
                 <td width = "30%">
                     @obj.DisplayOrder
                 </td>
-                <td width = "30%">
+@*                <td width = "30%">
                     @obj.CreatedDateTime
-                </td>
+                </td>*@
             </tr>
         }
     </tbody>
