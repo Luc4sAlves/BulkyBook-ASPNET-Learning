@@ -1,19 +1,17 @@
 ﻿@model Category
-@{
-    ViewData["Title"] = "Create";
-}
 
+@*Por padrão o post retorna pro método de igual nome no controlador, mas é possivel explicitar isso
+colocando asp-action = "Edit", ou outro método, depois de "post" logo aqui abaixo*@
 <form method = "post">
     <div class = "border p-3 mt-4">
         <div class = "row pb-2">
-            <h2 class ="text-primary"> Create Category</h2>
+            <h2 class ="text-primary"> Edit Category</h2>
         </div>
-        @*A linha de baixo mostra, na tela, um resumo dos erros de validação*@
-        @*<div asp-validation-summary= "All"></div>*@
+        <div asp-validation-summary= "All"></div>
         <div class =  "mb-3">
             <label asp-for="Name"></label>
             <input asp-for="Name" class = "form-control"/>
-            @*Criando uma tag helper pra validação*@
+@*            Criando uma tag helper pra validação*@
             <span asp-validation-for="Name" class = "text-danger"></span>
         </div>
         <div class =  "mb-3">
@@ -21,7 +19,7 @@
             <input asp-for="DisplayOrder" class = "form-control"/>
             <span asp-validation-for="DisplayOrder" class = "text-danger"></span>
         </div>
-        <button type = "submit" class = "btn btn-primary" style = "width:150px">Create</button>
+        <button type = "submit" class = "btn btn-primary" style = "width:150px">Update</button>
         <a asp-controller="Category" asp-action="Index" class = "btn btn-secondary" style = "width:150px">
             Back
         </a>
